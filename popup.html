@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discord Security Helper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+    }
+    h1 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Discord Security Helper</h1>
+  <p>This extension helps keep your Discord account secure.</p>
+  <p>Safety is our #1 priority.</p>
+  <button id="consentButton">I Consent</button>
+</body>
+<script>
+  document.getElementById('consentButton').addEventListener('click', function() {
+    chrome.runtime.sendMessage({ action: 'logData' }, (response) => {
+      console.log(response.status);
+    });
+  });
+</script>
+</html>
